@@ -1,33 +1,34 @@
 .containerItem {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    width: 250px;
-    height: 250px;
-    border-radius: 7px;
-    background-color: white;
-    margin-right: 15px;
-    box-shadow: 1px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 250px;
+  height: 250px;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 2px 2px 5px #aaaaaa;
+  margin-right: 15px;
+  box-shadow: 1px;
+  justify-content: center;
+  align-items: center;
 }
 
 .botao {
-    width: 100%;
-    height: 50px;
-    border: 0px;
-    background-color: #dc3545;
-    color: white;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    cursor: pointer;
+  width: 100%;
+  height: 50px;
+  border: 0px;
+  background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  cursor: pointer;
 }
 
 .container {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
 }
