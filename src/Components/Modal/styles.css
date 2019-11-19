@@ -1,64 +1,102 @@
 .bgContainer {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;   
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .isModal {
-    width: 50%;
-    height: 600px;
-    background-color: white;
-    border-radius: 10px;
+  width: 50%;
+  height: 380px;
+  background-color: #eee;
+  border-radius: 10px;
 }
 
 .visible {
-    visibility: visible;
+  visibility: visible;
 }
 
 .notVisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .produto {
-    width: 100%;
-    display: flex; 
-    height: 40%;
-    padding: 10px;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  height: 40%;
+  background-color: white;
+  padding-left: 25px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  flex-direction: row;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .dadosProduto {
-    display: flex;
-    flex-direction: column;
-    margin-left: 45px;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 45px;
+  justify-content: center;
 }
 
 .dadosProduto h1 {
-    color: #333;
-    margin-bottom: 10px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .dadosProduto p {
-    color: #ccc
+  color: #ccc;
 }
 
 .dadosProduto small {
-    color: #ccc
+  color: #ccc;
 }
 
 .dadosProduto button {
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 45px;
-    border-radius: 0px;
-    border:0px;
-    background-color: red;
-    color: white;
-    right: 0;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 45px;
+  border-radius: 0px;
+  border: 0px;
+  background-color: red;
+  color: white;
+  right: 0;
+}
+
+.conteudoModal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 50px 15px 50px;
+}
+
+.isModal input {
+  width: 45%;
+  height: 50px;
+  border-radius: 7px;
+  padding: 15px;
+  font-size: 20px;
+  border: 0.4px solid #333;
+}
+
+.areaButton {
+  width: 100%;
+  height: 60px;
+  flex: 1;
+  padding-right: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.areaButton button {
+  width: 125px;
+  color: white;
+  font-weight: bold;
+  background-color: #28a745;
+  border: 0px;
+  border-radius: 7px;
 }
