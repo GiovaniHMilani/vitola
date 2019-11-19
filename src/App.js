@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import ListItem from './Components/ListItem'
+import Modal from './Components/Modal'
+import './styles.css'
+
+export default function App() {
+  const [visible, setVisible] = useState(false);
+  const [object, setObject] = useState({});
+
+  const data = [
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"},
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"},
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"},
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"},
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"},
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"},
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"},
+    { nomeProduto: "iphoneLoko", preco: 12.50, loja: "MalacoAssassino", image: "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"}
+    ]
+
+  const setProduto = (isObject) => {
+    setObject(isObject);
+    setVisible(!visible)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Modal visible={visible} setVisible={setVisible} produto={object}/>
+    <ul className="list">
+      {data.map(data => {
+        return <ListItem setProduto={() => setProduto(data)} data={data} />
+      })}
+    </ul>
+    </>
   );
 }
-
-export default App;
