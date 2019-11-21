@@ -102,3 +102,7 @@
   border: 0px;
   border-radius: 7px;
 }
+
+.produto img {
+  width: 150px;
+}

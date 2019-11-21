@@ -7,7 +7,7 @@ export default function Modal({ visible, produto, setVisible }) {
     <div className={visible ? "bgContainer visible" : "bgContainer notVisible"}>
       <div className="isModal">
         <div className="produto">
-          <img src={produto.img} />
+          <img src={produto.img} alt="Imagem do produto" />
           <div className="dadosProduto">
             <h1>{produto.nome}</h1>
             <p>{produto.valor}</p>

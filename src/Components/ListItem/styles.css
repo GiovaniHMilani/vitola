@@ -13,8 +13,14 @@
   align-items: center;
 }
 
-.botao {
+.containerbotao {
   width: 100%;
+  flex-direction: row;
+  display: flex;
+}
+
+.botao {
+  width: 50%;
   height: 50px;
   border: 0px;
   background-color: #dc3545;
@@ -22,6 +28,20 @@
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   border-bottom-left-radius: 7px;
+  cursor: pointer;
+}
+
+.botaoRedirect {
+  width: 50%;
+  height: 50px;
+  text-decoration: none;
+  line-height: 50px;
+  text-align: center;
+  border: 0px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
   border-bottom-right-radius: 7px;
   cursor: pointer;
 }
@@ -34,11 +54,9 @@
 }
 
 .container img {
-  width: 50px;
-  height: 100px;
+  width: 100px;
 }
 
 .container p {
   text-align: center;
-  
 }
