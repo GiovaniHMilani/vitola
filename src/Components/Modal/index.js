@@ -7,10 +7,10 @@ export default function Modal({ visible, produto, setVisible }) {
     <div className={visible ? "bgContainer visible" : "bgContainer notVisible"}>
       <div className="isModal">
         <div className="produto">
-          <img src={produto.image} width="200" />
+          <img src={produto.img} />
           <div className="dadosProduto">
-            <h1>{produto.nomeProduto}</h1>
-            <p>{produto.preco}</p>
+            <h1>{produto.nome}</h1>
+            <p>{produto.valor}</p>
             <small>{produto.loja}</small>
             <button onClick={() => setVisible(false)}>X</button>
           </div>

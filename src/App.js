@@ -1,71 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import ListItem from "./Components/ListItem";
 import Modal from "./Components/Modal";
 import "./styles.css";
 
+import instance from './api'
+
 export default function App() {
   const [visible, setVisible] = useState(false);
   const [object, setObject] = useState({});
+  const [data, setData] = useState([]);
 
-  const data = [
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
-    },
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
-    },
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
-    },
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
-    },
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
-    },
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
-    },
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
-    },
-    {
-      nomeProduto: "iphoneLoko",
-      preco: 12.5,
-      loja: "MalacoAssassino",
-      image:
-        "https://static.carrefour.com.br/medias/sys_master/images/images/hfe/h8d/h00/h00/13331580190750.jpg"
+  const getProdutos = async () => {
+    try {
+      const response = await instance.get('/produtos');
+    
+      setData(response.data);
+    } catch (error) {
+      console.log(error.message)
     }
-  ];
+  }
+
+  useEffect(() => {
+    getProdutos();
+  }, [])
 
   const setProduto = isObject => {
     setObject(isObject);
@@ -77,7 +35,7 @@ export default function App() {
       <Modal visible={visible} setVisible={setVisible} produto={object} />
       <div className="center">
         <ul className="list">
-          {data.map(data => {
+        {data.map(data => {
             return <ListItem setProduto={() => setProduto(data)} data={data} />;
           })}
         </ul>
